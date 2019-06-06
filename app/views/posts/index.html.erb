@@ -1,0 +1,13 @@
+<% @posts.each do |post| %>
+  <div class="card">
+    <h3 class="card-title"><%= post.user.name %></h3>
+    <p class="card-body"><%= post.body %></p>
+    <div class="">
+      <%= link_to 'Show', post, class: "btn btn-info" %>
+      <% if post.user.id == current_user.id %>
+        <%= link_to 'Edit', edit_post_path(post), class: "btn btn-info" %>
+        <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

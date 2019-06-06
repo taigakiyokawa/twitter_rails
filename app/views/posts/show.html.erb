@@ -1,0 +1,5 @@
+<h2><%= @post.user.name %></h2>
+<p><%= @post.body%></p>
+
+<%= link_to 'Back', posts_path, class: "btn btn-secondary" %>
+<%= link_to 'Edit', edit_post_path(@post), class: "btn btn-primary" %>
